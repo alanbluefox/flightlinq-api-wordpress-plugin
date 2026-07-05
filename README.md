@@ -318,10 +318,14 @@ The plugin uses the `flightlinq-api` text domain and loads translation files fro
 
 For support, bug reports, or feature requests, open an issue on the project repository.
 
+## Maintainer
+
+This plugin is maintained by [Air BlueFox](https://airbluefox.fr/), a virtual airline and flight simulation community.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## License
 
-Copyright © AirBlueFox. No open-source license has been declared for this repository. Contact the author before redistributing or modifying the plugin outside the rights granted by applicable law.
+This plugin is licensed under the GPL-2.0-or-later license. See [LICENSE](LICENSE) for details.
