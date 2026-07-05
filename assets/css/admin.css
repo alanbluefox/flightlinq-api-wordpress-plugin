@@ -1,0 +1,1290 @@
+/**
+ * Admin styles for FlightLinq API.
+ *
+ * @package FlightLinq_API
+ * @since 1.0.0
+ * @since 1.0.2 Added styles for the diagnostic table.
+ * @since 1.2.0 Added styles for the PHP help page.
+ * @since 1.3.0 Improved the professional layout.
+ * @since 1.4.2 Added styles for the Shortcodes page.
+ * @date 2026-05-23
+ */
+
+.flightlinq-logo {
+	max-width: 150px;
+	height: auto;
+}
+
+.flightlinq-avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.flightlinq-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1em;
+}
+
+.flightlinq-table th,
+.flightlinq-table td {
+	padding: 8px;
+	border: 1px solid #e5e5e5;
+	text-align: left;
+}
+
+.flightlinq-table th {
+	background-color: #f9f9f9;
+	font-weight: 600;
+}
+
+.flightlinq-table tbody tr:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
+.flightlinq-diagnostic-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1em;
+}
+
+.flightlinq-diagnostic-table th,
+.flightlinq-diagnostic-table td {
+	padding: 8px;
+	border: 1px solid #e5e5e5;
+	text-align: left;
+	vertical-align: top;
+}
+
+.flightlinq-diagnostic-table th {
+	background-color: #f9f9f9;
+	font-weight: 600;
+	width: 30%;
+}
+
+.flightlinq-diagnostic-table code {
+	background-color: #f0f0f0;
+	padding: 2px 4px;
+	border-radius: 3px;
+	font-size: 12px;
+}
+
+/* Styles for the PHP help page (v1.2.0+) */
+.flightlinq-admin-page {
+	max-width: 1800px;
+}
+
+.flightlinq-help-page {
+	margin-top: 20px;
+}
+
+.flightlinq-settings-page {
+	margin-top: 20px;
+}
+
+.flightlinq-help-container {
+	max-width: 1800px;
+	margin: 0 auto;
+}
+
+.flightlinq-settings-container {
+	padding-bottom: 40px;
+}
+
+.flightlinq-settings-header {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #ffffff;
+	padding: 32px;
+	border-radius: 12px;
+	margin-bottom: 32px;
+	box-shadow: 0 4px 12px rgba(34, 113, 177, 0.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.flightlinq-settings-header::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -10%;
+	width: 200px;
+	height: 200px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+}
+
+.flightlinq-settings-header h1 {
+	margin: 0 0 12px 0;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	position: relative;
+}
+
+.flightlinq-settings-header__title {
+	margin: 0 0 12px 0;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	position: relative;
+}
+
+.flightlinq-settings-header__subtitle {
+	margin: 0;
+	font-size: 16px;
+	opacity: 0.95;
+	line-height: 1.6;
+	position: relative;
+}
+
+.flightlinq-settings-header__badge {
+	margin-top: 16px;
+	position: relative;
+}
+
+.flightlinq-settings-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 340px;
+	gap: 28px;
+	align-items: start;
+	margin-top: 30px;
+}
+
+.flightlinq-settings-main,
+.flightlinq-settings-sidebar {
+	min-width: 0;
+}
+
+.flightlinq-settings-main {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	min-width: 0;
+}
+
+.flightlinq-settings-form {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.flightlinq-settings-form > .flightlinq-settings-card {
+	margin: 0;
+}
+
+.flightlinq-settings-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.flightlinq-settings-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+	border-radius: 12px;
+	padding: 28px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.3s ease;
+}
+
+.flightlinq-settings-card--actions .flightlinq-settings-card__header {
+	border-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 18px;
+}
+
+.flightlinq-settings-card--actions .flightlinq-settings-actions {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+}
+
+.flightlinq-settings-card__header {
+	margin-bottom: 24px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.flightlinq-settings-card__title {
+	margin: 0 0 12px 0;
+	font-size: 24px;
+	color: #1d2327;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+}
+
+.flightlinq-settings-card__description {
+	margin: 0;
+	color: #646970;
+	line-height: 1.7;
+	font-size: 15px;
+}
+
+.flightlinq-settings-card__content {
+	margin-top: 20px;
+}
+
+.flightlinq-settings-card__actions {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.flightlinq-settings-sidebar .flightlinq-settings-sidebar-card {
+	padding: 24px;
+}
+
+.flightlinq-settings-sidebar-card__title {
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1d2327;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #e5e5e5;
+}
+
+.flightlinq-settings-sidebar-card__content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.flightlinq-settings-action {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.flightlinq-settings-action__button {
+	width: 100%;
+	justify-content: center;
+}
+
+.flightlinq-status-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	border: 1px solid #e5e5e5;
+}
+
+.flightlinq-status-item__label {
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.flightlinq-status-item__value {
+	font-weight: 600;
+}
+
+.flightlinq-status {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.flightlinq-status--success {
+	background-color: #e7f3ed;
+	color: #00a32a;
+}
+
+.flightlinq-status--error {
+	background-color: #fde8e8;
+	color: #d63638;
+}
+
+.flightlinq-settings-field {
+	margin-bottom: 20px;
+}
+
+.flightlinq-settings-field label {
+	display: block;
+	font-weight: 500;
+	color: #1d2327;
+	margin-bottom: 8px;
+}
+
+.flightlinq-settings-field input[type="password"],
+.flightlinq-settings-field input[type="text"],
+.flightlinq-settings-field input[type="number"] {
+	width: 100%;
+	max-width: 400px;
+	padding: 10px 12px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: border-color 0.2s ease;
+}
+
+.flightlinq-settings-field input[type="password"]:focus,
+.flightlinq-settings-field input[type="text"]:focus,
+.flightlinq-settings-field input[type="number"]:focus {
+	border-color: #2271b1;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.2);
+}
+
+.flightlinq-settings-field input[type="checkbox"] {
+	margin-right: 8px;
+}
+
+.flightlinq-settings-help {
+	margin-top: 8px;
+	font-size: 13px;
+	color: #646970;
+	line-height: 1.5;
+}
+
+.flightlinq-settings-actions {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.flightlinq-connection-test {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+	margin-top: 18px;
+	padding-top: 18px;
+	border-top: 1px solid #e5e7eb;
+}
+
+.flightlinq-connection-test__action {
+	display: flex;
+	align-items: center;
+	flex: 0 0 auto;
+}
+
+.flightlinq-connection-test__result {
+	display: flex;
+	align-items: center;
+	min-height: 0;
+}
+
+.flightlinq-connection-test .flightlinq-button {
+	align-self: center;
+	width: auto;
+	min-height: 38px;
+}
+
+.flightlinq-connection-test .flightlinq-admin-notice {
+	margin: 0;
+	padding: 10px 14px;
+	min-height: auto;
+	display: inline-flex;
+	align-items: center;
+}
+
+.flightlinq-button {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	line-height: 1.4;
+}
+
+.flightlinq-button--primary {
+	background-color: #2271b1;
+	color: #ffffff;
+	border: 1px solid #135e96;
+}
+
+.flightlinq-button--primary:hover {
+	background-color: #135e96;
+	border-color: #0d4a7d;
+}
+
+.flightlinq-button--primary:focus {
+	background-color: #135e96;
+	border-color: #0d4a7d;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.3);
+}
+
+.flightlinq-button--secondary {
+	background-color: #f6f7f7;
+	color: #2271b1;
+	border: 1px solid #2271b1;
+}
+
+.flightlinq-button--secondary:hover {
+	background-color: #f0f0f1;
+	border-color: #135e96;
+}
+
+.flightlinq-button--secondary:focus {
+	background-color: #f0f0f1;
+	border-color: #135e96;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.2);
+}
+
+.flightlinq-button--warning {
+	background-color: #fff8e5;
+	color: #d63638;
+	border: 1px solid #d63638;
+}
+
+.flightlinq-button--warning:hover {
+	background-color: #ffebd6;
+	border-color: #b32d2e;
+}
+
+.flightlinq-button--warning:focus {
+	background-color: #ffebd6;
+	border-color: #b32d2e;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(214, 54, 56, 0.2);
+}
+
+.flightlinq-status-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+}
+
+.flightlinq-status-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 14px;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	background: #f8fafc;
+}
+
+.flightlinq-status-label,
+.flightlinq-status-value {
+	min-width: 0;
+}
+
+.flightlinq-status-value {
+	text-align: right;
+	word-break: break-word;
+}
+
+.flightlinq-status-badge {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.flightlinq-status-badge--success {
+	background-color: #e7f3ed;
+	color: #00a32a;
+}
+
+.flightlinq-status-badge--error {
+	background-color: #fde8e8;
+	color: #d63638;
+}
+
+.flightlinq-status-badge--warning {
+	background-color: #fff8e5;
+	color: #d63638;
+}
+
+.flightlinq-status-badge--muted {
+	background-color: #f0f0f1;
+	color: #646970;
+}
+
+.flightlinq-admin-notice {
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.flightlinq-admin-notice--success {
+	background-color: #e7f3ed;
+	color: #00a32a;
+	border: 1px solid #00a32a;
+}
+
+.flightlinq-admin-notice--error {
+	background-color: #fde8e8;
+	color: #d63638;
+	border: 1px solid #d63638;
+}
+
+.flightlinq-settings-sidebar code {
+	display: inline-block;
+	max-width: 100%;
+	padding: 4px 6px;
+	border-radius: 4px;
+	background: #f1f5f9;
+	white-space: normal;
+	word-break: break-word;
+}
+
+.flightlinq-cache-message {
+	margin-top: 12px;
+	min-height: 0;
+}
+
+.flightlinq-cache-message .flightlinq-admin-notice {
+	margin: 0;
+	padding: 10px 14px;
+	font-size: 13px;
+}
+
+.flightlinq-help-header {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #ffffff;
+	padding: 32px;
+	border-radius: 12px;
+	margin-bottom: 32px;
+	box-shadow: 0 4px 12px rgba(34, 113, 177, 0.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.flightlinq-help-header::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -10%;
+	width: 200px;
+	height: 200px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+}
+
+.flightlinq-help-header h1 {
+	margin: 0 0 12px 0;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	position: relative;
+}
+
+.flightlinq-help-header__subtitle {
+	margin: 0 0 24px 0;
+	font-size: 16px;
+	opacity: 0.95;
+	line-height: 1.6;
+	position: relative;
+}
+
+.flightlinq-help-header__badge {
+	margin-top: 16px;
+	position: relative;
+}
+
+.flightlinq-badge {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.flightlinq-badge--success {
+	background-color: #00a32a;
+	color: #ffffff;
+}
+
+.flightlinq-note {
+	background-color: #fff3cd;
+	border: 1px solid #ffeaa7;
+	border-left: 4px solid #ffc107;
+	padding: 15px 20px;
+	margin-bottom: 30px;
+	border-radius: 4px;
+}
+
+.flightlinq-note p {
+	margin: 0;
+	color: #856404;
+}
+
+.flightlinq-help-layout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 30px;
+	margin-top: 30px;
+}
+
+.flightlinq-help-sidebar {
+	position: sticky;
+	top: 20px;
+	height: fit-content;
+	align-self: start;
+}
+
+.flightlinq-help-nav-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	padding: 24px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.flightlinq-help-nav-title {
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1d2327;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #e5e5e5;
+}
+
+.flightlinq-help-nav-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.flightlinq-help-nav-list li {
+	margin-bottom: 4px;
+	position: relative;
+}
+
+.flightlinq-help-nav-list li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 3px;
+	height: 0;
+	background-color: #2271b1;
+	border-radius: 2px;
+	transition: height 0.2s ease;
+}
+
+.flightlinq-help-nav-list a {
+	display: block;
+	padding: 10px 12px 10px 20px;
+	text-decoration: none;
+	color: #3c434a;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	font-size: 14px;
+	font-weight: 400;
+	border-left: 3px solid transparent;
+}
+
+.flightlinq-help-nav-list a:hover {
+	background-color: #f0f0f1;
+	color: #2271b1;
+	padding-left: 24px;
+	border-left-color: #2271b1;
+}
+
+.flightlinq-help-nav-list a:focus {
+	background-color: #f0f0f1;
+	color: #2271b1;
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2);
+}
+
+.flightlinq-help-content {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.flightlinq-help-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+	border-radius: 12px;
+	padding: 28px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	scroll-margin-top: 20px;
+	transition: box-shadow 0.3s ease;
+}
+
+.flightlinq-help-card:hover {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.flightlinq-help-card__header {
+	margin-bottom: 24px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.flightlinq-help-card__title {
+	margin: 0 0 12px 0;
+	font-size: 24px;
+	color: #1d2327;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+}
+
+.flightlinq-help-card__description {
+	margin: 0;
+	color: #646970;
+	line-height: 1.7;
+	font-size: 15px;
+}
+
+.flightlinq-code-block {
+	background-color: #1d2327;
+	border: 1px solid #135e96;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-top: 24px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flightlinq-code-toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 18px;
+	background-color: #135e96;
+	border-bottom: 1px solid #0d4a7d;
+}
+
+.flightlinq-code-language {
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 4px 10px;
+	border-radius: 3px;
+}
+
+.flightlinq-copy-code {
+	background-color: #2271b1;
+	color: #ffffff;
+	border: 1px solid #135e96;
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.flightlinq-copy-code:hover {
+	background-color: #135e96;
+	border-color: #0d4a7d;
+	color: #ffffff;
+}
+
+.flightlinq-copy-code:focus {
+	background-color: #135e96;
+	border-color: #0d4a7d;
+	color: #ffffff;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.3);
+}
+
+.flightlinq-copy-code:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.flightlinq-copy-code.is-copied {
+	background-color: #00a32a;
+	border-color: #008723;
+	color: #ffffff;
+}
+
+.flightlinq-copy-code.is-copied:hover {
+	background-color: #008723;
+	border-color: #006d1c;
+}
+
+.flightlinq-code-block pre {
+	margin: 0;
+	padding: 20px;
+	overflow-x: auto;
+	background-color: #1d2327;
+}
+
+.flightlinq-code-block code {
+	font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #f0f0f1;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+	.flightlinq-help-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-help-sidebar {
+		position: static;
+		margin-bottom: 20px;
+	}
+
+	.flightlinq-settings-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-settings-sidebar {
+		position: static;
+	}
+}
+
+@media (max-width: 768px) {
+	.flightlinq-help-header {
+		padding: 24px;
+	}
+
+	.flightlinq-help-header h1 {
+		font-size: 24px;
+	}
+
+	.flightlinq-help-header__subtitle {
+		font-size: 14px;
+	}
+
+	.flightlinq-help-card {
+		padding: 20px;
+	}
+
+	.flightlinq-help-card__title {
+		font-size: 20px;
+	}
+
+	.flightlinq-code-block code {
+		font-size: 13px;
+	}
+
+	.flightlinq-copy-code {
+		padding: 6px 12px;
+		font-size: 12px;
+	}
+
+	.flightlinq-help-nav-card {
+		padding: 20px;
+	}
+
+	.flightlinq-settings-header {
+		padding: 24px;
+	}
+
+	.flightlinq-settings-header h1 {
+		font-size: 24px;
+	}
+
+	.flightlinq-settings-header__subtitle {
+		font-size: 14px;
+	}
+
+	.flightlinq-settings-card {
+		padding: 20px;
+	}
+
+	.flightlinq-settings-card__title {
+		font-size: 20px;
+	}
+
+	.flightlinq-settings-sidebar-card {
+		padding: 20px;
+	}
+}
+
+/* Styles for the Shortcodes page (v1.4.2+) */
+.flightlinq-shortcodes-page {
+	margin-top: 20px;
+}
+
+.flightlinq-shortcodes-container {
+	max-width: 1800px;
+	margin: 0 auto;
+}
+
+.flightlinq-shortcodes-header {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #ffffff;
+	padding: 32px;
+	border-radius: 12px;
+	margin-bottom: 32px;
+	box-shadow: 0 4px 12px rgba(34, 113, 177, 0.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.flightlinq-shortcodes-header::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -10%;
+	width: 200px;
+	height: 200px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+}
+
+.flightlinq-shortcodes-header h1 {
+	margin: 0 0 12px 0;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	position: relative;
+}
+
+.flightlinq-shortcodes-header__title {
+	margin: 0 0 12px 0;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	position: relative;
+}
+
+.flightlinq-shortcodes-header__subtitle {
+	margin: 0 0 24px 0;
+	font-size: 16px;
+	opacity: 0.95;
+	line-height: 1.6;
+	position: relative;
+}
+
+.flightlinq-shortcodes-header__badge {
+	margin-top: 16px;
+	position: relative;
+}
+
+.flightlinq-shortcodes-layout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 30px;
+	margin-top: 30px;
+}
+
+.flightlinq-shortcodes-sidebar {
+	position: sticky;
+	top: 20px;
+	height: fit-content;
+	align-self: start;
+}
+
+.flightlinq-shortcodes-main {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.flightlinq-shortcodes-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+	border-radius: 12px;
+	padding: 28px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	scroll-margin-top: 20px;
+	transition: box-shadow 0.3s ease;
+}
+
+.flightlinq-shortcodes-card:hover {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.flightlinq-shortcodes-card__header {
+	margin-bottom: 24px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.flightlinq-shortcodes-card__title {
+	margin: 0 0 12px 0;
+	font-size: 24px;
+	color: #1d2327;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+}
+
+.flightlinq-shortcodes-card__description {
+	margin: 0;
+	color: #646970;
+	line-height: 1.7;
+	font-size: 15px;
+}
+
+.flightlinq-shortcodes-card__content {
+	margin-top: 20px;
+}
+
+.flightlinq-shortcodes-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.flightlinq-shortcodes-list li {
+	padding: 16px;
+	margin-bottom: 12px;
+	background-color: #f8f9fa;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.flightlinq-shortcodes-list li:last-child {
+	margin-bottom: 0;
+}
+
+.flightlinq-shortcodes-list code {
+	background-color: #1d2327;
+	color: #f0f0f1;
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+	font-size: 13px;
+}
+
+.flightlinq-shortcodes-status {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.flightlinq-shortcodes-status--available {
+	background-color: #e7f3ed;
+	color: #00a32a;
+}
+
+.flightlinq-shortcodes-status--planned {
+	background-color: #f0f0f1;
+	color: #646970;
+}
+
+.flightlinq-shortcodes-attributes {
+	margin-top: 20px;
+}
+
+.flightlinq-shortcodes-attributes h3 {
+	margin: 0 0 16px 0;
+	font-size: 18px;
+	color: #1d2327;
+	font-weight: 600;
+}
+
+.flightlinq-shortcodes-attributes ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.flightlinq-shortcodes-attributes li {
+	padding: 12px;
+	margin-bottom: 8px;
+	background-color: #f8f9fa;
+	border: 1px solid #e5e5e5;
+	border-radius: 6px;
+	font-size: 14px;
+}
+
+.flightlinq-shortcodes-attributes li:last-child {
+	margin-bottom: 0;
+}
+
+.flightlinq-shortcodes-attributes code {
+	background-color: #1d2327;
+	color: #f0f0f1;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+	font-size: 12px;
+}
+
+/* Responsive styles for the Shortcodes page */
+@media (max-width: 1100px) {
+	.flightlinq-shortcodes-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-shortcodes-sidebar {
+		position: static;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.flightlinq-shortcodes-header {
+		padding: 24px;
+	}
+
+	.flightlinq-shortcodes-header h1 {
+		font-size: 24px;
+	}
+
+	.flightlinq-shortcodes-header__subtitle {
+		font-size: 14px;
+	}
+
+	.flightlinq-shortcodes-card {
+		padding: 20px;
+	}
+
+	.flightlinq-shortcodes-card__title {
+		font-size: 20px;
+	}
+
+	.flightlinq-shortcodes-list li {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* Shortcodes documentation 1.7.2 */
+.flightlinq-shortcodes-page,
+.flightlinq-shortcodes-page * {
+	box-sizing: border-box;
+}
+
+.flightlinq-shortcodes-page .flightlinq-help-content,
+.flightlinq-shortcodes-page .flightlinq-help-card,
+.flightlinq-shortcodes-page .flightlinq-help-card__content {
+	min-width: 0;
+	max-width: 100%;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 14px;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list li {
+	display: block;
+	min-width: 0;
+	margin-bottom: 0;
+	line-height: 1.65;
+	overflow-wrap: anywhere;
+}
+
+.flightlinq-shortcodes-page code,
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list code {
+	display: inline-block;
+	max-width: 100%;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.45;
+}
+
+.flightlinq-shortcodes-page .flightlinq-code-block,
+.flightlinq-shortcodes-page .flightlinq-code-block pre {
+	max-width: 100%;
+}
+
+.flightlinq-shortcodes-page .flightlinq-code-block pre {
+	overflow-x: auto;
+}
+
+/* Shortcodes documentation 1.7.3 */
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list {
+	align-items: start;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list li {
+	padding: 14px;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-list li > p {
+	margin: 10px 0;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-example {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-example span,
+.flightlinq-shortcodes-page .flightlinq-shortcodes-primary {
+	color: #50575e;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-primary code,
+.flightlinq-shortcodes-page .flightlinq-shortcodes-attribute-list code {
+	margin: 2px 3px 2px 0;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-details {
+	margin-top: 10px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #ffffff;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-details summary {
+	padding: 9px 11px;
+	color: #1d2327;
+	background: #f6f7f7;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-details[open] summary {
+	border-bottom: 1px solid #dcdcde;
+	border-radius: 5px 5px 0 0;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-details > div,
+.flightlinq-shortcodes-page .flightlinq-shortcodes-details > ul {
+	margin: 0;
+	padding: 11px;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-code-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 7px;
+	overflow-x: auto;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-code-list code {
+	white-space: nowrap;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-attribute-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	overflow-x: visible;
+}
+
+.flightlinq-shortcodes-page .flightlinq-shortcodes-attribute-list code {
+	white-space: normal;
+}

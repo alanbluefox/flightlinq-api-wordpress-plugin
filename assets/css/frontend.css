@@ -1,0 +1,1238 @@
+/**
+ * Frontend styles for FlightLinq API.
+ *
+ * This file contains the styles for FlightLinq shortcodes on the frontend.
+ * The styles are designed to be clean, modern, and compatible with any WordPress theme.
+ *
+ * @package FlightLinq_API
+ * @since 1.4.0
+ * @since 1.4.1 Added themes and layouts.
+ * @since 1.4.2 Separated theme/surface: theme controls colors, surface controls the background.
+ * @since 1.4.3 Added theme="inherit" to inherit from the current WordPress theme.
+ * @since 1.4.6 Added the banner_fit and banner_ratio attributes for better responsive banner display.
+ * @date 2026-05-23
+ */
+
+/* Main shortcode container */
+.flightlinq-shortcode {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	line-height: 1.6;
+}
+
+/* Inherit theme - inherits from the current WordPress theme (recommended by default) */
+.flightlinq-theme-inherit {
+	--flightlinq-text: currentColor;
+	--flightlinq-text-muted: currentColor;
+	--flightlinq-border: rgba(0, 0, 0, 0.1);
+	--flightlinq-accent: #2271b1;
+	--flightlinq-error-text: #d63638;
+	--flightlinq-empty-text: currentColor;
+}
+
+/* Light theme (default) - controls only text and border colors */
+.flightlinq-theme-light {
+	--flightlinq-text: #1d2327;
+	--flightlinq-text-muted: #646970;
+	--flightlinq-border: #e5e5e5;
+	--flightlinq-accent: #2271b1;
+	--flightlinq-error-text: #d63638;
+	--flightlinq-empty-text: #646970;
+}
+
+/* Dark theme - controls only text and border colors */
+.flightlinq-theme-dark {
+	--flightlinq-text: #f0f0f1;
+	--flightlinq-text-muted: #a7aaad;
+	--flightlinq-border: #3c434a;
+	--flightlinq-accent: #72aee6;
+	--flightlinq-error-text: #f0f0f1;
+	--flightlinq-empty-text: #a7aaad;
+}
+
+/* Auto theme - adapts based on prefers-color-scheme */
+.flightlinq-theme-auto {
+	--flightlinq-text: #1d2327;
+	--flightlinq-text-muted: #646970;
+	--flightlinq-border: #e5e5e5;
+	--flightlinq-accent: #2271b1;
+	--flightlinq-error-text: #d63638;
+	--flightlinq-empty-text: #646970;
+}
+
+@media (prefers-color-scheme: dark) {
+	.flightlinq-theme-auto {
+		--flightlinq-text: #f0f0f1;
+		--flightlinq-text-muted: #a7aaad;
+		--flightlinq-border: #3c434a;
+		--flightlinq-accent: #72aee6;
+		--flightlinq-error-text: #f0f0f1;
+		--flightlinq-empty-text: #a7aaad;
+	}
+}
+
+/* Transparent surface - transparent background (inherits from the current theme) */
+.flightlinq-surface-transparent .flightlinq-card {
+	background-color: transparent;
+}
+
+/* Card surface - background based on the theme */
+.flightlinq-surface-card .flightlinq-card {
+	background-color: #ffffff;
+}
+
+.flightlinq-surface-card.flightlinq-theme-dark .flightlinq-card {
+	background-color: #1d2327;
+}
+
+.flightlinq-surface-card.flightlinq-theme-auto .flightlinq-card {
+	background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+	.flightlinq-surface-card.flightlinq-theme-auto .flightlinq-card {
+		background-color: #1d2327;
+	}
+}
+
+/* Main card */
+.flightlinq-card {
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 8px;
+	padding: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+}
+
+/* Card banner */
+.flightlinq-card__banner {
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.flightlinq-card__banner-image {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+}
+
+/* 3:1 banner ratio */
+.flightlinq-banner-ratio-3-1 {
+	aspect-ratio: 3 / 1;
+}
+
+.flightlinq-banner-ratio-3-1 .flightlinq-card__banner-image {
+	width: 100%;
+	height: 100%;
+}
+
+/* Auto banner ratio */
+.flightlinq-banner-ratio-auto {
+	aspect-ratio: auto;
+}
+
+.flightlinq-banner-ratio-auto .flightlinq-card__banner-image {
+	height: auto;
+	object-fit: initial;
+}
+
+/* Banner contain mode (shows the full image without cropping) */
+.flightlinq-banner-fit-contain .flightlinq-card__banner-image {
+	object-fit: contain;
+	object-position: center;
+}
+
+/* Banner cover mode (fills the container, cropping if needed) */
+.flightlinq-banner-fit-cover .flightlinq-card__banner-image {
+	object-fit: cover;
+	object-position: center;
+}
+
+/* Card header */
+.flightlinq-card__header {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 20px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid var(--flightlinq-border);
+}
+
+/* Airline logo */
+.flightlinq-card__logo {
+	max-width: 80px;
+	max-height: 80px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: 4px;
+}
+
+/* Card title */
+.flightlinq-card__title {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--flightlinq-text);
+	line-height: 1.3;
+}
+
+/* Card subtitle */
+.flightlinq-card__subtitle {
+	margin: 4px 0 0 0;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--flightlinq-text-muted);
+}
+
+/* Card description */
+.flightlinq-card__description {
+	margin: 0 0 16px 0;
+	font-size: 15px;
+	color: var(--flightlinq-text);
+	line-height: 1.6;
+}
+
+/* Card metadata */
+.flightlinq-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-bottom: 16px;
+	padding: 12px;
+	background-color: rgba(0, 0, 0, 0.03);
+	border-radius: 6px;
+}
+
+.flightlinq-surface-card .flightlinq-card__meta {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.flightlinq-surface-card.flightlinq-theme-dark .flightlinq-card__meta {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.flightlinq-card__meta-item {
+	font-size: 14px;
+	color: var(--flightlinq-text);
+}
+
+.flightlinq-card__meta-item strong {
+	color: var(--flightlinq-text-muted);
+}
+
+.flightlinq-card__meta-item a {
+	color: var(--flightlinq-accent);
+	text-decoration: none;
+}
+
+.flightlinq-card__meta-item a:hover {
+	text-decoration: underline;
+}
+
+/* Statistics container */
+.flightlinq-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 16px;
+	margin-top: 20px;
+}
+
+/* Individual statistic */
+.flightlinq-stat {
+	background-color: rgba(0, 0, 0, 0.03);
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 6px;
+	padding: 16px;
+	text-align: center;
+}
+
+.flightlinq-surface-card .flightlinq-stat {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.flightlinq-surface-card.flightlinq-theme-dark .flightlinq-stat {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Statistic value */
+.flightlinq-stat__value {
+	display: block;
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--flightlinq-accent);
+	line-height: 1.2;
+	margin-bottom: 4px;
+}
+
+/* Statistic label */
+.flightlinq-stat__label {
+	display: block;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--flightlinq-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Error message */
+.flightlinq-error {
+	background-color: #fde8e8;
+	border: 1px solid #d63638;
+	border-radius: 6px;
+	padding: 16px;
+	color: #d63638;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* Empty message */
+.flightlinq-empty {
+	background-color: #f8f9fa;
+	border: 1px solid #e5e5e5;
+	border-radius: 6px;
+	padding: 16px;
+	color: #646970;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* Compact layout */
+.flightlinq-layout-compact .flightlinq-card {
+	padding: 16px;
+}
+
+.flightlinq-layout-compact .flightlinq-card__header {
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+}
+
+.flightlinq-layout-compact .flightlinq-card__logo {
+	max-width: 60px;
+	max-height: 60px;
+}
+
+.flightlinq-layout-compact .flightlinq-card__title {
+	font-size: 20px;
+}
+
+.flightlinq-layout-compact .flightlinq-stats {
+	margin-top: 16px;
+	gap: 12px;
+}
+
+.flightlinq-layout-compact .flightlinq-stat {
+	padding: 12px;
+}
+
+/* Recent flights shortcode */
+.flightlinq-shortcode--recent-flights {
+	margin-bottom: 20px;
+}
+
+.flightlinq-recent-flights {
+	width: 100%;
+}
+
+/* Flights table */
+.flightlinq-recent-flights__table-wrapper {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.flightlinq-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.flightlinq-table th,
+.flightlinq-table td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid var(--flightlinq-border);
+}
+
+.flightlinq-table th {
+	font-weight: 600;
+	color: var(--flightlinq-text);
+	background-color: rgba(0, 0, 0, 0.02);
+	white-space: nowrap;
+}
+
+.flightlinq-table tr:last-child td {
+	border-bottom: none;
+}
+
+.flightlinq-table tbody tr:hover {
+	background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Flight cards */
+.flightlinq-flight-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+	align-items: flex-start;
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+}
+
+.flightlinq-flight-card {
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 8px;
+	padding: 16px;
+	background-color: var(--flightlinq-surface-bg, #ffffff);
+	width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
+}
+
+.flightlinq-surface-card .flightlinq-flight-card {
+	background-color: #ffffff;
+}
+
+.flightlinq-surface-transparent .flightlinq-flight-card {
+	background-color: transparent;
+}
+
+.flightlinq-flight-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--flightlinq-border);
+}
+
+.flightlinq-flight-card__title {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--flightlinq-text);
+	margin: 0;
+}
+
+.flightlinq-flight-card__meta {
+	font-size: 13px;
+	color: var(--flightlinq-text-muted);
+}
+
+.flightlinq-flight-card__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+}
+
+.flightlinq-flight-card__item {
+	display: flex;
+	flex-direction: column;
+}
+
+.flightlinq-flight-card__label {
+	font-size: 12px;
+	color: var(--flightlinq-text-muted);
+	margin-bottom: 4px;
+}
+
+.flightlinq-flight-card__value {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--flightlinq-text);
+}
+
+/* Responsive card layout */
+@media (max-width: 600px) {
+	.flightlinq-flight-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-flight-card__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Pilot leaderboard shortcode */
+.flightlinq-shortcode--pilot-leaderboard {
+	margin-bottom: 20px;
+}
+
+.flightlinq-pilot-leaderboard {
+	width: 100%;
+}
+
+.flightlinq-pilot-leaderboard__table-wrapper {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Pilot podium */
+.flightlinq-pilot-leaderboard__podium {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+.flightlinq-podium-card {
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 8px;
+	padding: 16px;
+	background-color: var(--flightlinq-surface-bg, #ffffff);
+	text-align: center;
+}
+
+.flightlinq-podium-card__rank {
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--flightlinq-text);
+	margin-bottom: 4px;
+}
+
+.flightlinq-podium-card__name {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--flightlinq-text);
+	margin-bottom: 8px;
+}
+
+.flightlinq-podium-card__stats {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font-size: 13px;
+	color: var(--flightlinq-text-muted);
+}
+
+.flightlinq-podium-card__stat {
+	display: inline-block;
+}
+
+.flightlinq-podium-card--rank-1 {
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.flightlinq-podium-card--rank-2 {
+	opacity: 0.95;
+}
+
+.flightlinq-podium-card--rank-3 {
+	opacity: 0.9;
+}
+
+.flightlinq-pilot-leaderboard__others {
+	margin-top: 16px;
+}
+
+/* Pilot leaderboard cards */
+.flightlinq-leaderboard-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 20px;
+	align-items: start;
+}
+
+.flightlinq-leaderboard-card {
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 8px;
+	padding: 16px;
+	background-color: var(--flightlinq-surface-bg, #ffffff);
+	width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
+}
+
+.flightlinq-surface-card .flightlinq-leaderboard-card {
+	background-color: #ffffff;
+}
+
+.flightlinq-surface-transparent .flightlinq-leaderboard-card {
+	background-color: transparent;
+}
+
+.flightlinq-leaderboard-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.flightlinq-leaderboard-card__rank {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--flightlinq-text-muted);
+}
+
+.flightlinq-leaderboard-card__name {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--flightlinq-text);
+}
+
+.flightlinq-leaderboard-card__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+}
+
+.flightlinq-leaderboard-card__item {
+	display: flex;
+	flex-direction: column;
+}
+
+.flightlinq-leaderboard-card__label {
+	font-size: 12px;
+	color: var(--flightlinq-text-muted);
+	margin-bottom: 4px;
+}
+
+.flightlinq-leaderboard-card__value {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--flightlinq-text);
+}
+
+@media (max-width: 600px) {
+	.flightlinq-leaderboard-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-leaderboard-card__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.flightlinq-layout-compact .flightlinq-stat__value {
+	font-size: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.flightlinq-card {
+		padding: 16px;
+	}
+
+	.flightlinq-card__header {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.flightlinq-card__logo {
+		max-width: 60px;
+		max-height: 60px;
+	}
+
+	.flightlinq-card__title {
+		font-size: 20px;
+	}
+
+	.flightlinq-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-stat__value {
+		font-size: 24px;
+	}
+
+	.flightlinq-card__meta {
+		flex-direction: column;
+		gap: 8px;
+	}
+}
+
+/* Frontend harmonization 1.6.0 */
+.flightlinq-shortcode {
+	--flightlinq-surface: Canvas;
+	--flightlinq-surface-muted: rgba(127, 127, 127, 0.08);
+	--flightlinq-accent-soft: rgba(20, 119, 184, 0.12);
+	--flightlinq-radius: 12px;
+	--flightlinq-shadow: 0 10px 30px rgba(10, 42, 66, 0.08);
+	width: 100%;
+	max-width: 100%;
+	margin-block: 1.5rem;
+	color: var(--flightlinq-text);
+}
+
+.flightlinq-shortcode,
+.flightlinq-shortcode * {
+	box-sizing: border-box;
+}
+
+.flightlinq-theme-light {
+	--flightlinq-surface: #ffffff;
+	--flightlinq-surface-muted: #f4f7fa;
+	--flightlinq-accent: #1477b8;
+	--flightlinq-accent-soft: rgba(20, 119, 184, 0.12);
+	--flightlinq-shadow: 0 10px 30px rgba(10, 42, 66, 0.08);
+	color-scheme: light;
+}
+
+.flightlinq-theme-dark {
+	--flightlinq-surface: #17212b;
+	--flightlinq-surface-muted: #202d39;
+	--flightlinq-accent: #69b9ee;
+	--flightlinq-accent-soft: rgba(105, 185, 238, 0.16);
+	--flightlinq-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+	color-scheme: dark;
+}
+
+.flightlinq-theme-auto {
+	--flightlinq-surface: #ffffff;
+	--flightlinq-surface-muted: #f4f7fa;
+	--flightlinq-accent-soft: rgba(34, 113, 177, 0.12);
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	.flightlinq-theme-auto {
+		--flightlinq-surface: #17212b;
+		--flightlinq-surface-muted: #202d39;
+		--flightlinq-accent-soft: rgba(114, 174, 230, 0.16);
+		--flightlinq-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+		color-scheme: dark;
+	}
+}
+
+.flightlinq-surface-card .flightlinq-card,
+.flightlinq-surface-card .flightlinq-flight-card,
+.flightlinq-surface-card .flightlinq-leaderboard-card,
+.flightlinq-surface-card .flightlinq-podium-card,
+.flightlinq-surface-card .flightlinq-table-wrapper,
+.flightlinq-surface-card .flightlinq-recent-flights__table-wrapper,
+.flightlinq-surface-card .flightlinq-pilot-leaderboard__table-wrapper {
+	background: var(--flightlinq-surface);
+}
+
+.flightlinq-card,
+.flightlinq-flight-card,
+.flightlinq-leaderboard-card,
+.flightlinq-podium-card {
+	border-color: var(--flightlinq-border);
+	border-radius: var(--flightlinq-radius);
+	box-shadow: none;
+}
+
+.flightlinq-card {
+	overflow: hidden;
+}
+
+.flightlinq-card__banner {
+	margin-bottom: 1.25rem;
+	border: 1px solid var(--flightlinq-border);
+}
+
+.flightlinq-card__header {
+	align-items: flex-start;
+}
+
+.flightlinq-card__logo {
+	flex: 0 0 auto;
+	padding: 0.35rem;
+	background: var(--flightlinq-surface-muted);
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 10px;
+}
+
+.flightlinq-card__meta {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 0.75rem 1rem;
+	background: var(--flightlinq-surface-muted);
+	border: 1px solid var(--flightlinq-border);
+	border-radius: 10px;
+}
+
+.flightlinq-card__meta-item {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.flightlinq-kpi-grid,
+.flightlinq-stats {
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 0.875rem;
+}
+
+.flightlinq-kpi,
+.flightlinq-stat {
+	min-width: 0;
+	background: var(--flightlinq-surface-muted);
+	border-radius: 10px;
+}
+
+.flightlinq-stat__value {
+	font-variant-numeric: tabular-nums;
+}
+
+.flightlinq-shortcode__toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 0 0.875rem;
+}
+
+.flightlinq-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	max-width: 100%;
+	padding: 0.35rem 0.65rem;
+	color: var(--flightlinq-text);
+	background: var(--flightlinq-accent-soft);
+	border: 1px solid rgba(20, 119, 184, 0.24);
+	border-radius: 999px;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	line-height: 1.35;
+	overflow-wrap: anywhere;
+}
+
+.flightlinq-muted {
+	color: var(--flightlinq-text-muted);
+	font-weight: 500;
+}
+
+.flightlinq-table-wrapper,
+.flightlinq-recent-flights__table-wrapper,
+.flightlinq-pilot-leaderboard__table-wrapper {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	background: var(--flightlinq-surface);
+	border: 1px solid var(--flightlinq-border);
+	border-radius: var(--flightlinq-radius);
+	box-shadow: none;
+}
+
+.flightlinq-table {
+	min-width: 680px;
+	margin: 0;
+	color: var(--flightlinq-text);
+	font-variant-numeric: tabular-nums;
+}
+
+.flightlinq-shortcode--recent-flights .flightlinq-table {
+	min-width: 920px;
+}
+
+.flightlinq-shortcode--fleet-by-type .flightlinq-table,
+.flightlinq-shortcode--routes-by-hub .flightlinq-table {
+	min-width: 840px;
+}
+
+.flightlinq-shortcode--routes-map .flightlinq-table {
+	min-width: 1180px;
+}
+.flightlinq-routes-map--table {
+	--flightlinq-routes-table-bg: #f8fbff;
+	--flightlinq-routes-table-border: rgba(15, 111, 168, 0.16);
+	--flightlinq-routes-table-head-bg: #eaf3fb;
+	--flightlinq-routes-table-row-alt: #f1f6fb;
+	--flightlinq-routes-table-row-hover: #e8f4fd;
+	--flightlinq-routes-table-text: #17212b;
+	--flightlinq-routes-table-muted: #506173;
+	--flightlinq-routes-table-heading: #0f4f78;
+	color: var(--flightlinq-routes-table-text);
+}
+
+.flightlinq-routes-map--table.flightlinq-theme-dark {
+	--flightlinq-routes-table-bg: #17212b;
+	--flightlinq-routes-table-border: rgba(105, 185, 238, 0.2);
+	--flightlinq-routes-table-head-bg: #202d39;
+	--flightlinq-routes-table-row-alt: #1c2833;
+	--flightlinq-routes-table-row-hover: #223748;
+	--flightlinq-routes-table-text: #f0f0f1;
+	--flightlinq-routes-table-muted: #a7aaad;
+	--flightlinq-routes-table-heading: #8cccf4;
+}
+
+@media (prefers-color-scheme: dark) {
+	.flightlinq-routes-map--table.flightlinq-theme-auto {
+		--flightlinq-routes-table-bg: #17212b;
+		--flightlinq-routes-table-border: rgba(105, 185, 238, 0.2);
+		--flightlinq-routes-table-head-bg: #202d39;
+		--flightlinq-routes-table-row-alt: #1c2833;
+		--flightlinq-routes-table-row-hover: #223748;
+		--flightlinq-routes-table-text: #f0f0f1;
+		--flightlinq-routes-table-muted: #a7aaad;
+		--flightlinq-routes-table-heading: #8cccf4;
+	}
+}
+
+.flightlinq-routes-map--table .flightlinq-table-wrapper {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+	background: var(--flightlinq-routes-table-bg);
+	border-color: var(--flightlinq-routes-table-border);
+}
+
+.flightlinq-routes-map--table .flightlinq-table {
+	min-width: 720px;
+	color: var(--flightlinq-routes-table-text);
+	background: var(--flightlinq-routes-table-bg);
+	font-size: 0.8125rem;
+	line-height: 1.35;
+}
+
+.flightlinq-routes-map--table-full .flightlinq-table {
+	min-width: 1180px;
+}
+
+.flightlinq-routes-map--table .flightlinq-table th,
+.flightlinq-routes-map--table .flightlinq-table td {
+	height: auto;
+	min-height: 0;
+	padding: 0.42rem 0.58rem;
+	color: var(--flightlinq-routes-table-text);
+	line-height: 1.35;
+	vertical-align: top;
+	border-color: var(--flightlinq-routes-table-border);
+	overflow-wrap: anywhere;
+}
+
+.flightlinq-routes-map--table .flightlinq-table th {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	color: var(--flightlinq-routes-table-heading);
+	background: var(--flightlinq-routes-table-head-bg);
+	font-size: 0.7rem;
+	font-weight: 700;
+}
+
+.flightlinq-routes-map--table .flightlinq-table tbody tr:nth-child(even) {
+	background: var(--flightlinq-routes-table-row-alt);
+}
+
+.flightlinq-routes-map--table .flightlinq-table tbody tr:hover {
+	background: var(--flightlinq-routes-table-row-hover);
+}
+
+.flightlinq-routes-map--table .flightlinq-muted {
+	color: var(--flightlinq-routes-table-muted);
+}
+
+.flightlinq-routes-map--table .flightlinq-badge {
+	color: var(--flightlinq-routes-table-text);
+	background: rgba(20, 119, 184, 0.1);
+	border-color: var(--flightlinq-routes-table-border);
+}
+
+
+.flightlinq-table th,
+.flightlinq-table td {
+	padding: 0.8rem 0.9rem;
+	vertical-align: top;
+	color: var(--flightlinq-text);
+}
+
+.flightlinq-table th {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--flightlinq-surface-muted);
+	border-bottom-width: 2px;
+	font-size: 0.75rem;
+	letter-spacing: 0.035em;
+	text-transform: uppercase;
+}
+
+.flightlinq-table tbody tr:nth-child(even) {
+	background: var(--flightlinq-surface-muted);
+}
+
+.flightlinq-table tbody tr:hover {
+	background: var(--flightlinq-accent-soft);
+}
+
+.flightlinq-flight-cards,
+.flightlinq-leaderboard-cards,
+.flightlinq-pilot-leaderboard__podium {
+	gap: 1rem;
+}
+
+.flightlinq-shortcode--recent-flights.flightlinq-layout-cards,
+.flightlinq-shortcode--recent-flights.flightlinq-layout-cards .flightlinq-flight-cards {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+}
+
+.flightlinq-shortcode--recent-flights.flightlinq-layout-cards .flightlinq-flight-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.flightlinq-flight-card,
+.flightlinq-leaderboard-card,
+.flightlinq-podium-card {
+	background: var(--flightlinq-surface);
+	transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.flightlinq-flight-card:hover,
+.flightlinq-leaderboard-card:hover,
+.flightlinq-podium-card:hover {
+	border-color: var(--flightlinq-accent);
+	box-shadow: 0 14px 34px rgba(10, 42, 66, 0.14);
+	transform: translateY(-2px);
+}
+
+.flightlinq-flight-card__grid,
+.flightlinq-leaderboard-card__grid {
+	gap: 0.75rem;
+}
+
+.flightlinq-flight-card__item,
+.flightlinq-leaderboard-card__item {
+	padding: 0.65rem;
+	background: var(--flightlinq-surface-muted);
+	border-radius: 8px;
+}
+
+.flightlinq-error,
+.flightlinq-empty {
+	border-radius: var(--flightlinq-radius);
+	box-shadow: none;
+}
+
+@media (max-width: 720px) {
+	.flightlinq-shortcode {
+		margin-block: 1rem;
+	}
+
+	.flightlinq-card {
+		padding: 1rem;
+	}
+
+	.flightlinq-card__header {
+		align-items: center;
+	}
+
+	.flightlinq-card__meta {
+		grid-template-columns: 1fr;
+	}
+
+	.flightlinq-kpi-grid,
+	.flightlinq-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.flightlinq-table th,
+	.flightlinq-table td {
+		padding: 0.7rem 0.75rem;
+		font-size: 0.8125rem;
+	}
+
+	.flightlinq-shortcode__toolbar {
+		align-items: stretch;
+	}
+
+	.flightlinq-badge {
+		white-space: normal;
+	}
+}
+
+@media (max-width: 420px) {
+	.flightlinq-kpi-grid,
+	.flightlinq-stats {
+		gap: 0.625rem;
+	}
+
+	.flightlinq-stat {
+		padding: 0.75rem 0.5rem;
+	}
+
+	.flightlinq-stat__value {
+		font-size: 1.35rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.flightlinq-flight-card,
+	.flightlinq-leaderboard-card,
+	.flightlinq-podium-card {
+		transition: none;
+	}
+}
+/* Interactive routes map 1.6.0 */
+.flightlinq-routes-map--map {
+	width: 100%;
+	max-width: 100%;
+}
+
+.flightlinq-routes-map-card {
+	--flightlinq-map-card-bg: #f8fbff;
+	--flightlinq-map-card-border: rgba(15, 111, 168, 0.18);
+	--flightlinq-map-card-muted: #516070;
+	--flightlinq-map-card-text: #17212b;
+	--flightlinq-map-chip-bg: rgba(20, 119, 184, 0.12);
+	--flightlinq-map-chip-text: #0f4f78;
+	width: 100%;
+	max-width: 100%;
+	padding: 0.75rem;
+	color: var(--flightlinq-map-card-text);
+	background: var(--flightlinq-map-card-bg);
+	border: 1px solid var(--flightlinq-map-card-border);
+	border-radius: calc(var(--flightlinq-radius) + 4px);
+	box-shadow: var(--flightlinq-shadow);
+	overflow: hidden;
+}
+
+.flightlinq-routes-map--map.flightlinq-theme-dark .flightlinq-routes-map-card {
+	--flightlinq-map-card-bg: #17212b;
+	--flightlinq-map-card-border: rgba(105, 185, 238, 0.2);
+	--flightlinq-map-card-muted: #a7aaad;
+	--flightlinq-map-card-text: #f0f0f1;
+	--flightlinq-map-chip-bg: rgba(105, 185, 238, 0.16);
+	--flightlinq-map-chip-text: #a8d7f5;
+}
+
+@media (prefers-color-scheme: dark) {
+	.flightlinq-routes-map--map.flightlinq-theme-auto .flightlinq-routes-map-card {
+		--flightlinq-map-card-bg: #17212b;
+		--flightlinq-map-card-border: rgba(105, 185, 238, 0.2);
+		--flightlinq-map-card-muted: #a7aaad;
+		--flightlinq-map-card-text: #f0f0f1;
+		--flightlinq-map-chip-bg: rgba(105, 185, 238, 0.16);
+		--flightlinq-map-chip-text: #a8d7f5;
+	}
+}
+
+.flightlinq-map-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.15rem 0.1rem 0.75rem;
+	color: var(--flightlinq-map-card-text);
+}
+
+.flightlinq-map-title {
+	color: var(--flightlinq-map-card-text);
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+}
+
+.flightlinq-map-chips,
+.flightlinq-map-summary,
+.flightlinq-routes-map-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.45rem;
+	margin: 0;
+}
+
+.flightlinq-map-chip,
+.flightlinq-routes-map-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	max-width: 100%;
+	padding: 0.32rem 0.62rem;
+	color: var(--flightlinq-map-chip-text);
+	background: var(--flightlinq-map-chip-bg);
+	border: 1px solid var(--flightlinq-map-card-border);
+	border-radius: 999px;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	line-height: 1.3;
+	overflow-wrap: anywhere;
+}
+
+.flightlinq-shortcode .flightlinq-leaflet-map,
+.flightlinq-routes-map .flightlinq-leaflet-map,
+.flightlinq-leaflet-map {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	min-height: 300px;
+	height: 520px;
+	height: var(--flightlinq-map-height, 520px);
+	overflow: hidden;
+	background: var(--flightlinq-surface-muted);
+	border: 1px solid var(--flightlinq-border);
+	border-radius: var(--flightlinq-radius);
+	box-shadow: none;
+}
+
+.flightlinq-shortcode .flightlinq-leaflet-map.leaflet-container,
+.flightlinq-routes-map .flightlinq-leaflet-map.leaflet-container {
+	width: 100%;
+	height: var(--flightlinq-map-height, 520px);
+	min-height: 300px;
+}
+
+.flightlinq-leaflet-map--message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.flightlinq-leaflet-map__message {
+	max-width: 34rem;
+	color: var(--flightlinq-text-muted);
+	font-weight: 600;
+	text-align: center;
+}
+
+.flightlinq-routes-map__note,
+.flightlinq-map-note {
+	margin: 0.75rem 0 0;
+	font-size: 0.9rem;
+}
+
+.flightlinq-map-popup {
+	max-width: 280px;
+	color: #1d2327;
+	font-size: 0.875rem;
+	line-height: 1.45;
+}
+
+.flightlinq-map-popup strong {
+	display: block;
+	margin-bottom: 0.45rem;
+}
+.flightlinq-map-popup__title {
+	color: #0f6fa8;
+	font-size: 0.95rem;
+}
+
+.flightlinq-map-popup dl {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.25rem 0.5rem;
+	margin: 0;
+}
+
+.flightlinq-map-popup dt {
+	font-weight: 700;
+}
+
+.flightlinq-map-popup dd {
+	margin: 0;
+}
+
+@media (max-width: 720px) {
+	.flightlinq-map-toolbar {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.flightlinq-map-chips {
+		justify-content: flex-start;
+	}
+
+	.flightlinq-leaflet-map {
+		height: max(300px, min(var(--flightlinq-map-height, 520px), 70vh));
+	}
+}
