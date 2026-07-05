@@ -1,6 +1,12 @@
-# FlightLinq API
+# FlightLinq API WordPress Plugin
 
-FlightLinq API is a WordPress plugin for connecting a Commercial-tier FlightLinq Developer API key to a WordPress website. It displays airline data through shortcodes, PHP helper functions, and filtered REST endpoints, and is designed for virtual airline websites and dashboards.
+FlightLinq API WordPress Plugin is an unofficial WordPress plugin for connecting a Commercial-tier FlightLinq Developer API key to a WordPress website. It displays virtual airline data through shortcodes, PHP helper functions, and filtered REST endpoints, and is designed for virtual airline websites and dashboards.
+
+## About FlightLinq
+
+[FlightLinq](https://flightlinq.com/) is a platform for virtual airlines, pilots, and flight simulation communities. It provides tools for managing airline operations, tracking flights, handling routes, fleets, pilots, and related operational data.
+
+This plugin is not the official FlightLinq API. It is a WordPress integration plugin that helps virtual airlines display selected FlightLinq data on their own WordPress websites.
 
 ## Features
 
